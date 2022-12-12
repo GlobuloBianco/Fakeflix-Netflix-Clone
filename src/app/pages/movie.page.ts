@@ -8,7 +8,7 @@ import { MovieFav, MoviesService } from './movies.service';
         <div *ngFor="let movie of movies; let i = index">
             <div class="card-body d-flex flex-column mt-5">
                 <img class="resize" [src]="'https://image.tmdb.org/t/p/w500' + movie.data.poster_path" alt="" />
-                <button class="btn btn-dark" (click)="movie.favoriteId ? remove(movie.favoriteId, i) : add(movie.data.id, i, true)"><span *ngIf="movie.heart == true">🧡</span><span *ngIf="movie.heart != true">🤍</span></button>
+                <button class="btn btn-dark" (click)="movie.favoriteId ? remove(movie.favoriteId, i) : add(movie.data.id, i)"><span *ngIf="movie.favoriteId != undefined">🧡</span><span *ngIf="movie.favoriteId == undefined">🤍</span></button>
             </div>
         </div>
     </div>
@@ -24,11 +24,11 @@ export class MoviesPage implements OnInit {
         this.movies = await this.movieSrv.getPopularMovies();
     }
 
-    async add(idM: number, i: number, heart:boolean) {
+    async add(idM: number, i: number) {
         this.movies[i].favoriteb = true;
         try {
-            const newFav: any = await (await this.movieSrv.addFavorite(idM, heart)).toPromise();
-            //this.movies[i].favoriteb = false;
+            const newFav: any = await (await this.movieSrv.addFavorite(idM)).toPromise();
+            this.movies[i].favoriteb = false;
             this.movies[i] = { ...this.movies[i], favoriteId: newFav.id }
         } catch (error) {
             this.movies[i].favoriteb = false;
@@ -39,7 +39,7 @@ export class MoviesPage implements OnInit {
         this.movies[i].favoriteb = true;
         try {
             await this.movieSrv.removeFavorite(idF).toPromise();
-            //this.movies[i].favoriteb = false;
+            this.movies[i].favoriteb = false;
             this.movies[i] = { ...this.movies[i], favoriteId: undefined }
         } catch (error) {
             this.movies[i].favoriteb = false;

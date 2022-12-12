@@ -10,7 +10,6 @@ export interface MovieFav{
   favoriteId?: number;
   favoriteb: boolean;
   poster_path: string;
-  heart:boolean;
 }
 
 @Injectable({
@@ -44,14 +43,13 @@ export class MoviesService {
     }));
   }
 
-  async addFavorite(movieId: number, heart:boolean) {
+  async addFavorite(movieId: number) {
     const user: authValue = (await this.authSrv.user$
       .pipe(take(1))
       .toPromise()) as authValue;
     return this.http.post<Favorite>(`${this.url}favorites`, {
       userId: user.user.id,
       movieId,
-      heart
     });
   }
   removeFavorite(id: number) {
