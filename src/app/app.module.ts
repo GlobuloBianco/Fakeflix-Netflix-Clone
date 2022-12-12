@@ -10,6 +10,7 @@ import { Homepage } from './pages/home.page';
 import { NavbarPage } from './pages/navbar.pages';
 
 
+
 @NgModule({
     declarations: [
         AppComponent,

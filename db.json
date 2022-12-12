@@ -1,26 +1,41 @@
 {
   "users": [
     {
-      "email": "testa@mail.com",
-      "password": "$gpsmtkosrky0RmtparjpsfllmtgK%gmY/f",
-      "name": "Globulo",
+      "email": "globulotest@gmail.com",
+      "password": "$2a$10$p3U6lqxgFpLArNXFTou2SORzmcCYHeV3dI3qr5IxTcy0neJ9sSQpu",
+      "name": "GlobuloBianco",
       "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$i./ceZIqIgbJFOm7ngbIPOYmmIdUEp//L7E5oIiIdm2etQwNX..ii",
+      "name": "test",
+      "id": 2
+    },
+    {
+      "email": "globulo@gmail.com",
+      "password": "$2a$10$bSQe7UymrO.A/9AuobLtpu3o8lGFDC1OidbpV/7y3dwG1B1PpjlYG",
+      "name": "Globulo",
+      "id": 3
     }
   ],
   "favorites": [
     {
       "userId": 1,
       "movieId": 527774,
+      "heart": true,
       "id": 1
     },
     {
-      "userId": 1,
-      "movieId": 615457,
+      "userId": 2,
+      "movieId": 460465,
+      "heart": true,
       "id": 2
     },
     {
-      "userId": 1,
-      "movieId": 567189,
+      "userId": 3,
+      "movieId": 460465,
+      "heart": true,
       "id": 3
     }
   ],

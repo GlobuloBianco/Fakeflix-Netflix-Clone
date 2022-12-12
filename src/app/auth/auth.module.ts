@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { RegisterPage } from './register.page';
 import { LoginPage } from './login.page';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginPage } from './login.page';
   imports: [
     AuthRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserModule
   ],
   providers:[
     {

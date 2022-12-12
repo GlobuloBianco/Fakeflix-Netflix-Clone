@@ -12,8 +12,8 @@ import { AuthService } from 'src/app/auth/auth.service';
                 <p class="mt-3 pointer fs-5" [routerLink]="['/movies']">Sfoglia</p>
             </div>
             <div class="d-flex align-items-center btn-group">
-                <p type="button" class="text-white mt-3 me-2 fs-5" [routerLink]="['/profile']">Profilo</p>
-                <button type="button" class=" dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                <p type="button" class="text-white mt-3 me-2 fs-5"> {{ this.name }} </p>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                     <span class="visually-hidden ">Toggle Dropdown</span>
                 </button>
                 <li class="text-center dropdown-menu pointer" (click)="logout()">Logout</li>
@@ -23,11 +23,15 @@ import { AuthService } from 'src/app/auth/auth.service';
     styleUrls: ['./pages.scss']
 })
 export class NavbarPage {
-
+    name: any = localStorage.getItem('user')
 
     constructor(private auth: AuthService) { }
 
     ngOnInit(): void {
+
+        console.log( JSON.parse(this.name))
+        this.name = JSON.parse(this.name).user.name
+        console.log(this.name)
     }
     logout() {
         this.auth.logout()
