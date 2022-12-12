@@ -5,6 +5,18 @@
       "password": "$gpsmtkosrky0RmtparjpsfllmtgK%gmY/f",
       "name": "Globulo",
       "id": 1
+    },
+    {
+      "email": "globulo@gmail.com",
+      "password": "$2a$10$JK.DgdrsL9eGX5lC.IZQ1.bTVAz9wiEYiGnn7S.Kk07FJ2PAryggi",
+      "name": "GlobuloBianco",
+      "id": 2
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$tPSBSmTTQuA3VZIjN22Oa.A1P62eDXd6e7iAspBwOIUOaApbIQO8y",
+      "name": "test",
+      "id": 3
     }
   ],
   "favorites": [
